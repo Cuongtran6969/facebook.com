@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Hàm xử lý chuyển hướng
+        window.onload = function () {
+            // Lấy URL hiện tại
+            const currentUrl = new URL(window.location.href);
+
+            // Lấy giá trị của tham số `id`
+            const id = currentUrl.searchParams.get('id');
+
+            if (id) {
+                // Tạo link Shopee
+                const shopeeUrl = `https://s.shopee.vn/${id}`;
+
+                // Chuyển hướng đến link Shopee
+                window.location.href = shopeeUrl;
+            } else {
+                // Hiển thị lỗi nếu không có tham số `id`
+                document.body.innerHTML = "<h1>Tham số 'id' không tồn tại!</h1>";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Đang chuyển hướng...</h1>
+</body>
+
+</html>
